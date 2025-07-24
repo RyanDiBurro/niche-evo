@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Builder – Niche Evo</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Brand Builder</h1>
+    <p>Enter your details to generate your brand package.</p>
+  </header>
+
+  <main>
+    <form id="brandForm">
+      <label>Niche:
+        <input type="text" id="niche" required />
+      </label>
+      <label>Your Name:
+        <input type="text" id="name" required />
+      </label>
+      <button type="submit">Generate</button>
+    </form>
+
+    <section id="result"></section>
+  </main>
+
+  <script>
+    document.getElementById("brandForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const niche = document.getElementById("niche").value;
+      const name = document.getElementById("name").value;
+      const result = document.getElementById("result");
+
+      result.innerHTML = `
+        <h2>Your Digital Identity:</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Niche:</strong> ${niche}</p>
+        <p><strong>Brand Color Palette:</strong> #FF5733, #C70039, #900C3F</p>
+        <p><strong>Suggested Logo Style:</strong> Bold minimalist text with clean icon.</p>
+        <p><strong>Starter Website Layout:</strong> Home, About, Services, Testimonials, Contact</p>
+      `;
+    });
+  </script>
+</body>
+</html>
